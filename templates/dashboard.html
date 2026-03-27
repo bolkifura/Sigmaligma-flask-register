@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <title>Dashboard</title>
-    <script src="<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
     <h2>Note dashboard</h2>
     Pozdravljen {{ uporabnik}}<br>
-    <textarea id="note" cols="30" rows="10"> ({ uporabnik }) </textarea>
+    <textarea id="note" cols="30" rows="10">{{ note }}</textarea>
     <button onclick="saveNote()" type="button">Shrani</button>
     <br>
     <a href="/logout">Odjavi me</a>
@@ -22,7 +22,7 @@
                 note: noteText
             },
             success: function (result) {
-                $("#weather-temp").html("<strong>" + result + "</strong> degrees")
+                alert(result);
             }
         });
     }
